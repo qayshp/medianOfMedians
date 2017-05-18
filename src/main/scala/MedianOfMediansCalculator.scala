@@ -3,7 +3,7 @@ import org.apache.spark.rdd.RDD
 
 class MedianOfMediansCalculator {
 
-  def calculateMedianOfMediansForFile(hdfsFilePath: String, sc: SparkContext) =
+  def calculateMedianOfMediansForFile(hdfsFilePath: String, sc: SparkContext): Double =
     calculateMedianOfMedians(sortAndNumberMedians(calculateMediansPerLine(readFileOfIntegers(hdfsFilePath, sc))))
 
   def readFileOfIntegers(hdfsFilePath: String, sc: SparkContext): RDD[Array[Int]] = {
